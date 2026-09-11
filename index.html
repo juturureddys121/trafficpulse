@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PromptWars x Techverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="challenge-board">
+        <div class="board-row">
+          <span class="pill pill-left">Google for Developers</span>
+          <span class="pill pill-center">PromptWars × Techverse</span>
+          <span class="pill pill-right">{ Build with AI }</span>
+        </div>
+
+        <h1>
+          Challenge: Build a Gemini-powered App that solves societal benefit by acting as a universal bridge between human intent and complex systems
+        </h1>
+
+        <div class="description">
+          <strong>Description:</strong>
+          Participants must create a functional interface that takes unstructured, messy, real-world inputs that can be anything (voice, traffic, weather, news, photos or messy stack of medical history) and instantly converts them into structured, verified, and life-saving actions.
+        </div>
+      </header>
+
+      <main class="demo-panel">
+        <div class="demo-header">
+          <div>
+            <p class="eyebrow">Societal impact app</p>
+            <h2>Intent-to-action orchestrator</h2>
+          </div>
+          <div class="status-badge">Live prototype</div>
+        </div>
+
+        <div class="app-grid">
+          <section class="input-panel">
+            <label for="userInput">Real-world input</label>
+            <textarea id="userInput" rows="10" placeholder="Example: My grandmother is short of breath and has a history of asthma, but her medication list is messy. She may have missed her inhaler and the city is under a heat advisory.">My grandmother is short of breath and has a history of asthma, but her medication list is messy. She may have missed her inhaler and the city is under a heat advisory.</textarea>
+
+            <div class="action-row">
+              <button id="analyzeBtn" class="primary-btn">Analyze intent</button>
+              <button id="sampleBtn" class="secondary-btn">Load sample</button>
+            </div>
+          </section>
+
+          <aside class="result-panel">
+            <div class="result-card">
+              <p class="mini-label">Detected intent</p>
+              <h3 id="detectedIntent">Medical triage</h3>
+            </div>
+
+            <div class="result-card risk-card">
+              <p class="mini-label">Risk level</p>
+              <div class="risk-row">
+                <span id="riskLevel">High</span>
+                <span id="riskScore" class="risk-score">92%</span>
+              </div>
+            </div>
+
+            <div class="result-card data-card">
+              <p class="mini-label">Verification sources</p>
+              <ul id="sourceList"></ul>
+            </div>
+          </aside>
+        </div>
+
+        <section class="output-panel">
+          <div class="section-header">
+            <h3>Structured action plan</h3>
+            <span id="timestamp">Just now</span>
+          </div>
+          <div id="actionList" class="action-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
