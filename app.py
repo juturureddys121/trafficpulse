@@ -1,4 +1,5 @@
 import json
+import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 from urllib.parse import urlparse
@@ -360,7 +361,10 @@ class AppHandler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
 
-def run_server(host: str = "127.0.0.1", port: int = 8000) -> None:
+def run_server(host: str = "0.0.0.0", port: int | None = None) -> None:
+    if port is None:
+        port = int(os.environ.get("PORT", "8000"))
+
     server = ThreadingHTTPServer((host, port), AppHandler)
     print(f"Serving HTTP on {host} port {port} (http://{host}:{port}/)")
     try:
